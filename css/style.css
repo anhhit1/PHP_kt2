@@ -1,0 +1,235 @@
+/**
+ * File: css/style.css
+ * Mô tả: File CSS chính cho ứng dụng hiển thị danh sách sản phẩm
+ * Định dạng giao diện người dùng cho trang web
+ */
+
+/* Container chính chứa toàn bộ nội dung */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Phần hiển thị danh sách sản phẩm */
+.product-list {
+    margin: 20px 0;
+}
+
+/* Định dạng cho từng sản phẩm */
+.product-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+/* Hiệu ứng hover cho sản phẩm */
+.product-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Định dạng tiêu đề sản phẩm */
+.product-item h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+/* Định dạng mô tả sản phẩm */
+.product-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Định dạng giá sản phẩm */
+.product-item .price {
+    color: #e44d26;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Phần điều khiển số lượng sản phẩm hiển thị */
+.per-page-select {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.per-page-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-info {
+    font-size: 0.9em;
+    color: #666;
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.product-info strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Định dạng select box số lượng sản phẩm */
+.per-page-select select {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Định dạng input nhập số lượng sản phẩm */
+.per-page-input {
+    width: 60px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+/* Định dạng nút áp dụng số lượng sản phẩm */
+#applyCustomPerPage {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút áp dụng */
+#applyCustomPerPage:hover {
+    background-color: #0056b3;
+}
+
+/* Định dạng thông báo lỗi */
+.error-message {
+    color: #dc3545;
+    display: none;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+/* Định dạng phần hiển thị loading */
+.loading {
+    text-align: center;
+    padding: 20px;
+    display: none;
+}
+
+/* Nội dung hiển thị khi loading */
+.loading::after {
+    content: "Đang tải...";
+    color: #666;
+    font-style: italic;
+}
+
+/* Định dạng tiêu đề chính */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Phần điều hướng phân trang */
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-info {
+    font-size: 0.9em;
+    color: #666;
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 10px;
+}
+
+.pagination-info strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+/* Định dạng nút phân trang */
+.pagination button {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+/* Hiệu ứng hover cho nút phân trang */
+.pagination button:hover:not(:disabled) {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Định dạng nút phân trang đang active */
+.pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Định dạng nút phân trang bị vô hiệu hóa */
+.pagination button:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    color: #999;
+}
+
+/* Định dạng dấu ... trong phân trang */
+.pagination span {
+    padding: 0 5px;
+    color: #666;
+}
+
+/* Định dạng thông báo không có sản phẩm */
+.no-products {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Định dạng thông báo lỗi */
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #dc3545;
+    font-style: italic;
+} 
